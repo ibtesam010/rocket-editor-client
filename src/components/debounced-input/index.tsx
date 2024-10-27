@@ -8,7 +8,7 @@ function DebouncedInput() {
   const { user_id, board_content, socket, locked_by_user_id } = useStore(store);
 
   const handleFocus = () => {
-    socket && socket.emit("request-access", user_id);
+    if (socket) socket.emit("request-access", user_id);
   };
 
   const handleChange = (v: ChangeEvent<HTMLTextAreaElement>) => {
@@ -24,14 +24,15 @@ function DebouncedInput() {
 
   const debouncedEmit = useCallback(
     debounce((content) => {
-      console.log("emmit");
-      socket && socket.emit("board-content", content);
+      if (socket) socket.emit("board-content", content);
     }, 500),
     [socket]
   );
 
   const handleBlur = () => {
-    socket && socket.emit("remove-access", user_id);
+    if (socket) {
+      socket.emit("remove-access", user_id);
+    }
   };
 
   return (
