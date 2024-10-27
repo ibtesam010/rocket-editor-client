@@ -1,0 +1,49 @@
+# Ignore node_modules folder
+node_modules/
+
+# Ignore build output
+.next/
+out/
+
+# Ignore generated files
+*.log
+*.env
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# Ignore temporary and system files
+.DS_Store
+Thumbs.db
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore dependency caches
+.pnp.*
+.pnp
+
+# Ignore yarn and npm lock files if using the other package manager
+yarn.lock
+package-lock.json
+
+# Ignore local environment variables and sensitive information
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore other specific files
+.next/cache
+.next/static
+*.swp
+*.swo
+
+# Ignore output for macOS and Linux
+*.DS_Store
+*.eslintcache
+__pycache__/
