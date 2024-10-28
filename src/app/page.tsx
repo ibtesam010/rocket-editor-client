@@ -2,13 +2,12 @@
 
 import Avatar from "@/components/avatar";
 import DebouncedInput from "@/components/debounced-input";
-import { generateName } from "@/helpers/name.helper";
 import useSocket from "@/hooks/useSocket";
 import { store } from "@/store";
 import { useStore } from "@tanstack/react-store";
 
 const Home = () => {
-  const { user_id, locked_by_user_id, socket_ids } = useStore(store);
+  const { socket_ids } = useStore(store);
 
   useSocket();
 
