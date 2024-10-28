@@ -1,5 +1,6 @@
 "use client";
 
+import Avatar from "@/components/avatar";
 import DebouncedInput from "@/components/debounced-input";
 import { generateName } from "@/helpers/name.helper";
 import useSocket from "@/hooks/useSocket";
@@ -16,18 +17,7 @@ const Home = () => {
       <h1 className="text-4xl">Rocket Editor</h1>
       <ul className="flex mt-8 ml-8">
         {socket_ids.map((s, i) => {
-          return (
-            <li
-              key={i}
-              className={`bg-gray-400 p-2 mx-2 rounded-full text-white ${
-                locked_by_user_id === s
-                  ? "ring-2 ring-gray-500 ring-offset-2"
-                  : ""
-              }`}
-            >
-              {s === user_id ? "You" : generateName(s)}
-            </li>
-          );
+          return <Avatar socket_user_id={s} />;
         })}
       </ul>
       <DebouncedInput />
