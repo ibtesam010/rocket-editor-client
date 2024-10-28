@@ -24,9 +24,10 @@ function DebouncedInput() {
 
   const debouncedEmit = useCallback(
     debounce((content) => {
-      if (socket) socket.emit("board-content", content);
+      if (socket)
+        socket.emit("board-content", { board_content: content, user_id });
     }, 500),
-    [socket]
+    [socket, user_id, locked_by_user_id]
   );
 
   const handleBlur = () => {

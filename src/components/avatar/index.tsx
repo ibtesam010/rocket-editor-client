@@ -11,7 +11,6 @@ function Avatar({ socket_user_id }: IProps) {
   const { locked_by_user_id, user_id } = useStore(store);
   return (
     <li
-      key={user_id}
       className={`flex justify-center items-center bg-gray-400 h-10 w-10 p-2 mx-2 rounded-full text-white ${
         locked_by_user_id === socket_user_id
           ? "ring-2 ring-gray-500 ring-offset-2"

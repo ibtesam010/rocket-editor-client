@@ -16,7 +16,7 @@ const Home = () => {
       <h1 className="text-4xl">Rocket Editor</h1>
       <ul className="flex mt-8 ml-8">
         {socket_ids.map((s, i) => {
-          return <Avatar socket_user_id={s} />;
+          return <Avatar socket_user_id={s} key={i} />;
         })}
       </ul>
       <DebouncedInput />
